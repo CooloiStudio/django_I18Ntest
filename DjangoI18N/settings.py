@@ -98,13 +98,9 @@ USE_I18N = True
 ugettext = lambda s: s
 
 LANGUAGES = (
-    ('en-us', ugettext('English')),
+    ('en-US', ugettext('English')),
     ('zh-CN', ugettext('Chinese')),
-    ('ja-jp', ugettext('Japanese')),
-)
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-    "django.core.context_processors.i18n",
+    ('ja-JP', ugettext('Japanese')),
 )
 
 USE_L10N = True

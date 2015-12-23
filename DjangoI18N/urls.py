@@ -18,8 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'i18napp.views.home'),
-    url(r'^trans1$', 'i18napp.views.trans_home'),
     url(r'^i18n/', include('django.conf.urls.i18n')),
-    url(r'^trans_template$', 'i18napp.views.trans_template'),
+    url(r'^$', 'i18napp.views.home'),
 ]
