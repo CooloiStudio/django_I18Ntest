@@ -1,7 +1,7 @@
 # django_I18Ntest
 A django Internationalization test. based on django 1.8.1
 
-Please use it after this:
+Please run this commad first
 ```bash
-python manager.py syncdb
+python manager.py migrate
 ```
