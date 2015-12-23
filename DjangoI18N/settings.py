@@ -113,9 +113,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = '/static/'
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR), 'static']
+
 TEMPLATES_DIRS = (
     os.path.join(os.path.dirname(__file__), 'templates').replace('\\', '/'),
 )
+
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
