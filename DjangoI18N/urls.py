@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_URL}),
     url(r'^$', 'i18napp.views.home'),
+    url(r'^fake_select/', 'i18napp.views.fake_select'),
 ]

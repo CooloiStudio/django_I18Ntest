@@ -10,7 +10,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 
 
-def home(request):
+def weekday():
     t = time.localtime()
     n = t[6]
     weekdays = [
@@ -22,11 +22,26 @@ def home(request):
         ugettext('Saturday'),
         ugettext('Sunday')
     ]
-    responseContext = {
+    return weekdays[n]
+
+
+def home(request):
+    content = {
         'lang': request.LANGUAGE_CODE,
-        'weekday': weekdays[n]
+        'weekday': weekday()
     }
     response = render_to_response('i18n.html',
-                                  responseContext,
+                                  content,
+                                  context_instance=RequestContext(request))
+    return response
+
+
+def fake_select(request):
+    content = {
+        'lang': request.LANGUAGE_CODE,
+        'weekday': weekday()
+    }
+    response = render_to_response('FakeSelect.html',
+                                  content,
                                   context_instance=RequestContext(request))
     return response

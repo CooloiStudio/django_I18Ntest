@@ -1,8 +1,10 @@
 {% load i18n %}
 {% load staticfiles %}
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
 <head>
     <title>i18n Test</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'i18napp/css/style.css' %}">
+    <script type="text/javascript" src="http://apps.bdimg.com/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'i18napp/javascript/script.js' %}"></script>
 </head>
 <body>
@@ -18,9 +20,10 @@
   <p>{% trans "test_msg" %}</p>
   <p>Using trans {% trans weekday %}</p>
   <p>No trans {{ weekday }}</p>
-
-  <a href="/fake_select">fake_select</a>
+  <a href="/">Normal Select</a>
 </select>
+
+<script type="text/javascript" src="{% static 'i18napp/javascript/FakeSelect.js' %}"></script>
 
 </body>
 </html>
