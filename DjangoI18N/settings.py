@@ -62,7 +62,6 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                "django.core.context_processors.i18n",
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -95,6 +94,10 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+USE_L10N = True
+
+USE_TZ = True
+
 ugettext = lambda s: s
 
 LANGUAGES = (
@@ -103,9 +106,9 @@ LANGUAGES = (
     ('ja-JP', ugettext('Japanese')),
 )
 
-USE_L10N = True
-
-USE_TZ = True
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 
 # Static files (CSS, JavaScript, Images)
@@ -113,15 +116,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '/static/'
-
 STATICFILES_DIRS = [os.path.join(BASE_DIR), 'static']
-
-TEMPLATES_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'templates').replace('\\', '/'),
-)
-
-
-LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale'),
-)
